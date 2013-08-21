@@ -7,6 +7,7 @@ module YmNotifications::NotificationsController
   
   def index
     @notifications = current_user.notifications.order("created_at DESC").page(params[:page])
+    current_user.unread_notification_count = current_user.unread_notification_count - @notifications.size
   end
   
   def set_all_read
