@@ -14,8 +14,6 @@ module YmNotifications::Notification
       resource.text
     elsif resource.respond_to?(:description)
       resource.description
-    else
-      resource.to_s
     end
   end
   
