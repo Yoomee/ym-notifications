@@ -6,3 +6,4 @@ module YmNotifications
 end
 
 Dir[File.dirname(__FILE__) + '/ym_notifications/models/*.rb'].each {|file| require file }
+Dir[File.dirname(__FILE__) + '/ym_notifications/controllers/*.rb'].each {|file| require file }

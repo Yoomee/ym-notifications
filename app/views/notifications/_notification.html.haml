@@ -1,0 +1,11 @@
+-no_border ||= false
+%li.notification{:class => "#{notification.read? ? '' : 'unread'}#{no_border ? 'no-border' : ''}"}
+  .notification-wrapper
+    =link_to(image_for(notification.resource.user, '60x60#'), notification.resource.user, :class => 'notification-img')
+    .notification-inner
+      =link_to_notification_user_message(notification)
+      %p.notification-summary
+        =truncate(notification.resource_text, :length => 90, :class => 'muted')
+      =link_to("view #{notification.resource_type.humanize.downcase}", notification.resource, :icon => 'arrow-right')
+    %span.notification-time
+      ="#{time_ago_in_words(notification.created_at)} ago"

@@ -1,0 +1,7 @@
+$('.notifications-list').append('<%=escape_javascript(render(@notifications))%>').removeClass('loading');
+<%if @notifications.next_page%>
+  $('#more-notifications-btn').attr('href', '<%=notifications_path(:page => @notifications.next_page)%>');
+  $('#more-notifications-btn').html($('#more-notifications-btn').data('link-text'));
+<%else%>
+  $('#more-notifications-btn').hide();
+<%end%>
