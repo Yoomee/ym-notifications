@@ -1,5 +1,5 @@
 -no_border ||= false
-%li.notification{:class => "#{notification.read? ? '' : 'unread'}#{no_border ? 'no-border' : ''}"}
+%li.notification{:class => "#{notification.read? ? '' : 'unread'} #{no_border ? 'no-border' : ''}"}
   .notification-wrapper
     =link_to_notification_image(notification)
     .notification-inner
