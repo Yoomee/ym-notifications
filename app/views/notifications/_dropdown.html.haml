@@ -1,5 +1,5 @@
 -if notifications.empty?
-  %p
+  %li
     You have no notifications yet.
 -else
   -notifications.group_by{|n| n.created_at.to_date}.each do |date, notifications_on_date|
