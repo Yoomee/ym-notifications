@@ -1,3 +1,3 @@
 module YmNotifications
-  VERSION = "0.2.5"
+  VERSION = "1.0.9"
 end
