@@ -8,7 +8,7 @@ module YmNotifications::NotificationsController
   def index
     @notifications = current_user.notifications.order("created_at DESC").page(params[:page])
     if !request.xhr?
-      current_user.unread_notification_count = current_user.unread_notification_count - @notifications.size
+      current_user.unread_notification_count = current_user.unread_notification_count - @notifications.unread.size
     else
       render :text => "OK"
     end
