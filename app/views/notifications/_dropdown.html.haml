@@ -1,13 +1,9 @@
-%ul.unstyled
-  -if notifications.empty?
-    %li.no-notifications
-      You have no notifications yet.
+%ul.dropdown-menu.notification-menu.unstyled{:role => "menu"}
+  %li.notification-header
+    %h4 Notifications
+    =link_to("Show all", notifications_path, :class => "label-show-all")
+  -if notifications.present?
+    -notifications.each do |notification|
+      =render('notifications/dropdown_notification', :notification => notification)
   -else
-    -notifications.group_by{|n| n.created_at.to_date}.each do |date, notifications_on_date|
-      %li.date-divider.mt-2.mb-0
-        .date-divider-line
-        %span.message-date
-          =date.today? ? 'Today' : "#{time_ago_in_words(date)} ago"
-      -notifications_on_date.each do |notification|
-        =render('notifications/notification', :notification => notification, :no_border => notifications_on_date.last == notification)
-=link_to "View all notifications", notifications_path, :class => "all-link"
+    %li.center.p-1 You have no notifications yet.

@@ -7,6 +7,22 @@ module YmNotifications::Notification
     base.scope :unread, base.where(:read => false)
     base.per_page = 20
   end
+
+  def image_path
+    polymorphic_path(resource_for_image)
+  end
+
+  def resource_for_image
+    if resource.respond_to?(:user)
+      resource.user
+    else
+      resource
+    end
+  end
+
+  def resource_path
+    polymorphic_path(resource_for_path)
+  end
   
   def resource_text
     return '' if resource.nil?
@@ -17,4 +33,9 @@ module YmNotifications::Notification
     end
   end
   
+  private
+  def resource_for_path
+    resource
+  end
+
 end

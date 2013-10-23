@@ -13,10 +13,10 @@ module YmNotifications::NotificationsHelper
   end
 
   def link_to_notification_resource(notification)
-    link_to("view #{notification.resource_type.humanize.downcase}", notification.resource, :icon => 'arrow-right')
+    link_to("view #{notification.resource_type.humanize.downcase}", notification.resource_path, :icon => 'arrow-right')
   end
 
-  def link_to_notification_user_message(notification)
+  def notification_description(notification)
     case notification.resource_type
     when 'Comment'
       link_to_self(notification.resource.user) +

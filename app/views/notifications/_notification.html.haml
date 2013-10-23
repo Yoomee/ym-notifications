@@ -1,9 +1,9 @@
 -no_border ||= false
 %li.notification{:class => "#{notification.read? ? '' : 'unread'} #{no_border ? 'no-border' : ''}"}
   .notification-wrapper
-    =link_to_notification_image(notification)
+    =link_to(image_for(notification.resource_for_image, '60x60#'), notification.image_path, :class => 'notification-img')
     .notification-inner
-      =link_to_notification_user_message(notification)
+      =notification_description(notification)
       -if notification.resource_text.present?
         %p.notification-summary
           =truncate(notification.resource_text, :length => 90)
