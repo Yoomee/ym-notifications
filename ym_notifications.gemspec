@@ -18,15 +18,16 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'ym_core', "~> 1.0"
   s.add_dependency "ym_users", "~> 1.0"
-    
+
   # for testing
-  s.add_development_dependency "sqlite3"      
+  s.add_development_dependency "sqlite3"
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency "factory_girl_rails"
-  s.add_development_dependency 'shoulda-matchers'  
+  s.add_development_dependency 'shoulda-matchers'
   s.add_development_dependency "capybara", "~> 2.0.3"
-  s.add_development_dependency "guard-rspec"  
+  s.add_development_dependency "guard-rspec", "~> 3.1.0"
+  s.add_development_dependency "listen", "~> 1.3.1"
   s.add_development_dependency "geminabox"
-  s.add_development_dependency "ym_tools", '~> 1.0'
-  
+  s.add_development_dependency "ym_tools", '~> 0.1.13'
+
 end
