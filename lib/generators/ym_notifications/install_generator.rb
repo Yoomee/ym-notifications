@@ -16,7 +16,7 @@ module YmNotifications
         end
         
         # Migrations must go last
-        try_migration_template "migrations/create_notifications.rb", "db/migrate/create_notifications"
+        try_migration_template "migrations/create_notifications.rb", "db/migrate/create_notifications.rb"
       end
       
     end
