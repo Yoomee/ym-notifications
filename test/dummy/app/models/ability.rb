@@ -12,6 +12,7 @@ class Ability
       # admin ability
     elsif user
       # user ability
+      can :index, Notification
       can :manage, User, :id => user.id      
     end
     

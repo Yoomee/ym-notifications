@@ -8,6 +8,7 @@ class CreateNotifications < ActiveRecord::Migration
       t.boolean :read, :default => false
       t.timestamps
     end
+    add_index :notifications, [:user_id, :read, :context]
     add_index :notifications, [:resource_id, :resource_type]
   end
   
