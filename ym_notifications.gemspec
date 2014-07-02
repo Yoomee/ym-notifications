@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "Summary of YmNotifications."
   s.description = "Description of YmNotifications."
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency 'ym_core', "~> 1.0"
