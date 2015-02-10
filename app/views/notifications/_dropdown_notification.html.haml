@@ -5,4 +5,4 @@
     =image_for(notification.resource_for_image, "25x25#", :class => "img-circle notification-thumbnail")
     .notification-info
       %p.notification-message-summary
-        =strip_tags(notification_description(notification))
+        =strip_tags(notification_description(notification)).html_safe
