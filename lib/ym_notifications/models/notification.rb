@@ -4,7 +4,7 @@ module YmNotifications::Notification
     base.belongs_to(:user)
     base.belongs_to(:resource, :polymorphic => true)
     base.validates(:user, :presence => true)
-    base.scope :unread, base.where(:read => false)
+    base.scope :unread, -> { base.where(:read => false) }
     base.per_page = 20
   end
 
